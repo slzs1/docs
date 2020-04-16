@@ -1,0 +1,41 @@
+module.exports ={
+	title:'擅离职守的vue学习',
+	description:'vuepress入门(未完待续)',
+	locales:{
+		'/':{
+			lang:'zn-CN',
+		}
+	},
+	dest:'./dist',
+	port:'7777',
+	head:[
+		['link',{rel:'icon',href:'/img/xinggong.favicon'}],
+		['link',{rel:'stylesheet',href:'/css/style.css'}]
+		],
+	base:'/vuepress-vlog',
+	markdown:{
+		lineNumber:true
+	},
+	themeConfig:{
+	smoothScroll:true,
+	lastUpdated:'上次更新',
+	nav:require("./nav.js"),	
+	sidebar:require("./sidebar.js"),
+	sidebarDepth: 2,
+	lastUpdated:'Last Updated',
+	searchMaxSuggestoins:10,
+	serviceWorker:{
+		updatePopup:{
+			message:"有新的内容.",
+			buttonText:'更新'
+		}
+	},
+	editLinks:true,
+	editLinkText:'在github上编辑此页！'
+	},
+	plugins:[
+	['@vuepress/plugin-google-analytics',{'ga':''}],
+	['@vuepress/nprogress'],
+	['@vuepress/back-to-top']
+]
+}
